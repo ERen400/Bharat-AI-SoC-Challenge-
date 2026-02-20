@@ -36,51 +36,76 @@ image acquisition, preprocessing, gesture classification, and real
 time output visualization. 
 
 3. Objectives 
- Develop a real-time gesture recognition system using 
+
+    Develop a real-time gesture recognition system using 
 Raspberry Pi. 
- Implement computer vision techniques for hand detection and 
+
+    Implement computer vision techniques for hand detection and 
 tracking. 
- Apply machine learning for gesture classification. 
- Optimize the system for low-power embedded hardware. 
- Demonstrate practical applications such as gesture-based 
+
+    Apply machine learning for gesture classification. 
+
+    Optimize the system for low-power embedded hardware. 
+
+    Demonstrate practical applications such as gesture-based 
 control. 
 
 4. System Architecture 
-The system consists of the following modules: 
- Input Module – Captures real-time video using a Raspberry Pi 
+
+   The system consists of the following modules: 
+
+      Input Module – Captures real-time video using a Raspberry Pi 
 camera. 
- Preprocessing Module – Performs image enhancement and hand 
+
+      Preprocessing Module – Performs image enhancement and hand 
 segmentation. 
- Feature Extraction – Identifies key points or contours from the 
+
+      Feature Extraction – Identifies key points or contours from the 
 hand region. 
- Classification Module – Recognizes gestures using a trained 
+
+      Classification Module – Recognizes gestures using a trained 
 model. 
- Output Module – Displays results and triggers mapped actions. 
+
+      Output Module – Displays results and triggers mapped actions. 
 
 5. Hardware Utilization 
 Components Used 
- Raspberry Pi (Model 4) 
- Raspberry Pi Camera Module / USB Webcam 
- MicroSD Card (32GB ) 
- Power Supply  
- HDMI Monitor  
- Keyboard and Mouse (initial setup) 
+
+    Raspberry Pi (Model 4) 
+
+    Raspberry Pi Camera Module / USB Webcam 
+
+    MicroSD Card (32GB ) 
+
+    Power Supply  
+
+    HDMI Monitor  
+
+    Keyboard and Mouse (initial setup) 
 Hardware Role 
- Raspberry Pi: Core processing unit handling image acquisition 
+
+    Raspberry Pi: Core processing unit handling image acquisition 
 and inference. 
- Camera Module: Captures gesture data. 
- MicroSD Card: Stores OS, datasets, and trained models. 
+
+    Camera Module: Captures gesture data. 
+
+    MicroSD Card: Stores OS, datasets, and trained models. 
 
 6. Software Requirements 
- Raspberry Pi OS (Linux-based) 
- Python Programming Language 
- OpenCV  
- NumPy  
- Media pipe  
+
+    Raspberry Pi OS (Linux-based) 
+
+    Python Programming Language 
+
+    OpenCV  
+
+    NumPy  
+
+    Media pipe  
 
 Gesture Recognition Logic 
 
-The gesture recognition in this project is implemented using a rule
+   The gesture recognition in this project is implemented using a rule
 based approach based on hand landmarks detected by Media Pipe. 
 The Media Pipe Hands model provides 21 landmarks for each 
 detected hand. By analyzing the relative positions of finger 
@@ -91,13 +116,15 @@ extended fingers is used to map gestures to system actions.
 Finger Detection Method 
 Each finger is classified as extended or folded using landmark 
 comparison: 
- If fingertip y-coordinate < lower joint y-coordinate → Finger is 
+
+    If fingertip y-coordinate < lower joint y-coordinate → Finger is 
 extended 
- Else → Finger is folded 
+  
+    Else → Finger is folded 
 For the thumb, horizontal comparison (x-axis) is used due to its 
 orientation. 
 
-The system works by detecting the number of fingers shown in front 
+   The system works by detecting the number of fingers shown in front 
 of the camera and assigning an action based on the finger count. 
 After the hand is detected, the landmarks of each finger are 
 analyzed to determine whether the finger is open or closed. The 
@@ -111,16 +138,21 @@ control actions using simple hand gestures.
 
 
 Applications 
- Touchless home automation 
- Gesture-based media control 
- Smart classroom systems 
- Assistive technology 
- Robotics interface 
+
+    Touchless home automation 
+
+    Gesture-based media control 
+   
+    Smart classroom systems 
+   
+    Assistive technology 
+   
+    Robotics interface 
 
 
 Results 
 
-The implemented gesture recognition system was successfully 
+   The implemented gesture recognition system was successfully 
 tested on a Raspberry Pi using a live camera feed. The system was 
 able to detect hand gestures in real-time and correctly interpret 
 finger-based commands such as forward, backward, volume up, 
@@ -134,7 +166,7 @@ observed to be around 90–95% for static hand gestures when the
 hand was clearly visible within the camera frame. The response time 
 was low, allowing near real-time execution of actions based on 
 detected gestures. 
-It was observed that the system performed best in well-lit 
+   It was observed that the system performed best in well-lit 
 environments with minimal background clutter. In low-light 
 conditions or when the hand was too far from the camera, detection 
 accuracy slightly decreased. Despite these limitations, the system 
